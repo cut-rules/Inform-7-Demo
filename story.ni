@@ -104,10 +104,6 @@ Drawing is an action applying to one thing. Understand "draw [something]" as dra
 Draining is an action applying to one object. Understand "drain [somebody]" as draining.
 
 Chapter 3 - Rules
-
-After sleeping:
-	if the player is contained by House:
-		say "You quickly fall into a deep slumber. In the middle of the night, however, some sort of banging sound wakes you up. It seems like there is nothing else around you, however, so you fall back asleep. Maybe it came from the basement.";
 		
 After taking something:
 	say "You pick up [noun].";
@@ -581,3 +577,29 @@ Instead of completing the ritual:
 		say "You can't do that here.";
 		rule succeeds;
 	say "What's that?";
+
+Chapter 6 - Sleep and dreams
+
+Table of Dreams
+dream number	dream text
+1	"You find yourself standing in a peaceful meadow, surrounded by flowers. The sun is shining, and everything feels calm... until you hear a distant echo coming from the basement of the house. You shiver, but the vision fades as quickly as it appeared. Suddenly, you awake, heart racing."
+2	"You’re walking down a long corridor of your childhood home, the familiar creak of the floorboards beneath your feet. Suddenly, a door at the end of the hall opens by itself. You hesitate. Something from the basement calls your name, a voice too low to understand. You turn, but no one is there. You feel a cold chill and wake up in a start."
+3	"The kitchen is warm, and the smell of fresh bread fills the air. Steve walks in with a broad smile, handing you a slice. You accept it, but as you bite down, the room warps. The walls begin to breathe, and the ground beneath you cracks open, revealing an endless staircase leading down to the basement. A voice whispers your name, but before you can respond, you wake up, drenched in sweat."
+4	"You're sitting on a beach, the sound of waves gently lapping at the shore. The sky is a soft orange as the sun sets. As you relax, you notice something strange – a dark figure standing at the edge of the water, calling for you in a voice that sounds eerily familiar. You turn, but when you look back, the figure is gone. You blink, and suddenly, you awake with a jolt."
+5	"You walk into the living room, where the fireplace is crackling. There’s a sense of peace, but then the fire sputters and goes out. A cold draft fills the room, and you hear faint footsteps coming from the basement. The door to the basement creaks open, and a voice, hoarse and desperate, beckons you closer. You try to take a step forward, but everything goes black and you wake up, breathless."
+6	"You're climbing a ladder in a vast, dark space. You reach a door at the top, but as you push it open, you're plunged into darkness. A deep voice calls from below, and you feel a pull, an unnatural force urging you to go down. The darkness churns and seems alive, like it's waiting for you. Before you can move, the dream shatters and you wake up with a racing heartbeat."
+7	"The room is familiar, but the shadows seem longer than usual. You're in the attic, rummaging through boxes when a sudden crash from below startles you. You run downstairs, but as you approach the basement door, you hesitate. There’s something down there... something calling your name, drawing you toward it. You step forward, and in an instant, you wake up, gasping for air."
+8	"You’re back in your childhood bedroom, the smell of fresh laundry in the air. You sit on the bed, and everything seems perfectly normal. But then you hear a scraping sound from the basement—louder, closer. You get up and start toward the door, but a voice says, ‘Don’t go.’ It sounds like your own voice, but twisted. With a start, you wake up, feeling uneasy."
+9	"The landscape around you is shifting rapidly, a blur of colors and shapes. You can’t keep up, and as the world spins, you hear something from the basement—low, guttural, almost growling. It’s like it’s calling to you, pulling you deeper into the chaos of your dream. Just as it reaches for you, you wake up, disoriented and anxious."
+10	"You’re sitting at a table, having dinner with friends. It’s calm, and everything feels right. But suddenly, the walls start to close in, and the basement door creaks open by itself. A strange force compels you to approach. Just as you reach for the handle, you’re jolted awake, your heart racing."
+
+
+Dream is a number that varies.
+
+Instead of sleeping:
+	if the player is contained by House:
+		say "You quickly fall asleep on the bed. Then, you quickly slip into dream.";
+		now dream is a random number from 1 to 10;
+		say the dream text in row dream of the Table of Dreams;
+		rule succeeds;
+	say "There is nowhere to sleep here.";
