@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Parchment</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <script src="jquery.min.js"></script>
+    <script src="ie.js" nomodule></script>
+    <script src="main.js" type="module"></script>
+    <link rel="stylesheet" href="web.css">
+    <script>
+        parchment_options = {
+            default_story: [ "story.ulx" ],
+            lib_path: './',
+            lock_story: 1,
+            lock_options: 1
+        };
+    </script>
+</head>
+<body>
+    <div id="gameport">
+        <div id="windowport">
+            <noscript>
+                <p>You'll need to turn on Javascript in your web browser to play this game.</p>
+            </noscript>
+        </div>
+        <div id="loadingpane">
+            <img src="waiting.gif" alt="LOADING"><br>
+            <em>&nbsp;&nbsp;&nbsp;Loading...</em>
+        </div>
+        <div id="errorpane" style="display:none;"><div id="errorcontent">...</div></div>
+    </div>
+</body>
+</html>
